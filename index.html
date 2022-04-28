@@ -8,8 +8,71 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <div class="container my-4">
+    <h1 class="my-4 text-center">Chatroom</h1>
+
+    <div class="chat-rooms mb-3 text-center">
+      <div class="my-2">Choose a chatroom:</div>
+      <button class="btn" id="general">#general</button>
+      <button class="btn" id="gaming">#gaming</button>
+      <button class="btn" id="music">#anime</button>
+      <button class="btn" id="ninjas">#manga</button>
+    </div>
+
+    <div class="chat-window">
+      <ul class="chat-list list-group"></ul>
+    </div>
+
+    <form class="new-chat my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Your message:</div>
+        </div>
+        <input type="text" id="message" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="send">
+        </div>
+      </div>
+    </form>
+
+    <form class="new-name my-3">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Update name:</div>
+        </div>
+        <input type="text" id="name" class="form-control" required>
+        <div class="input-group-append">
+          <input type="submit" class="btn" value="update">
+        </div>
+      </div>
+      <div class="update-mssg"></div>
+    </form>
+
+  </div>
+
+  
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyBwWfyitr6uZcXE5J1fGazBdi_-jkig4NE",
+      authDomain: "chatroom-9ca19.firebaseapp.com",
+      databaseURL: "https://chatroom-9ca19.firebaseio.com",
+      projectId: "chatroom-9ca19",
+      storageBucket: "chatroom-9ca19.appspot.com",
+      messagingSenderId: "789120794206",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(config);
+
+    const db = firebase.firestore();
+  </script>
   <script src="app.js"></script>
   <script src="chat.js"></script>
   <script src="ui.js"></script>
+  
+
+
 </body>
 </html>
