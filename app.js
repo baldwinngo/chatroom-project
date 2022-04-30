@@ -38,7 +38,7 @@ rooms.addEventListener('click', e => {
 const username = localStorage.username ? localStorage.username : 'anon';
 
 const chatroomUI = new chatUI(chatList)
-const chatroom = new Chatroom('anime', username);
+const chatroom = new Chatroom('general', username);
 
 chatroom.getChat((data) => {
   chatroomUI.render(data)
